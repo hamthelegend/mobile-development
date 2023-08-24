@@ -1,4 +1,4 @@
-package activity1
+package activity1.overengineered
 
 val vowels = setOf('a', 'e', 'i', 'o', 'u')
 val consonants = ('a'..'z').filter { it !in vowels }.toSet()

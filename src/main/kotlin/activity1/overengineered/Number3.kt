@@ -1,4 +1,4 @@
-package activity1
+package activity1.overengineered
 
 val Int.divisors get() = (1..this).filter { this % it == 0 }
 
@@ -18,7 +18,7 @@ fun main() {
         if (numberB != null) {
             println("The GCD of $numberA and $numberB is ${gcd(numberA, numberB)}")
         } else {
-            println("$stringA is not a number.")
+            println("$stringB is not a number.")
         }
     } else {
         println("$stringA is not a number.")
