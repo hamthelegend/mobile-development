@@ -259,6 +259,43 @@ println(fruitColors["apple"]) // "red"
 println(fruitColors["banana"]) // "yellow"
 ```
 
+### Mutable Collections
+
+Lists, sets, and maps are immutable by default, meaning once you have set their values,
+they're permanent.
+To make a collection mutable, declare it with the `mutable*Of` function.
+
+```kotlin
+val fruits = mutableListOf("apple", "banana", "kiwi")
+fruits.add("tomato") // [apple, banana, kiwi, tomato]
+fruits.remove("kiwi") // [apple, banana, tomato]
+```
+
+The mutability of collections is unrelated to the mutability of variables holding them.
+
+```kotlin
+var box1 = listOf("chloroform", "rope", "knife")
+// In this example, you can think of the variable box1 as a box holding a paper
+// with chloroform, rope, and knife written on it.
+// We cannot erase any item from or write to the list, since it is immutable.
+// However, we can do this:
+box1 = listOf("arsenic", "cyanide")
+println(box1) // [arsenic, cyanide]
+// This is because we did not really change the contents of the list.
+// Instead, we took out the original list from the box and replaced it
+// with a brand-new list with arsenic and cyanide written on it.
+// What we changed is the content of box1, not of the list.
+
+val box2 = mutableListOf("botox", "ricin")
+// In box2, on the other hand, we can edit the list it holds even though box2
+// is declared with the val keyword.
+box2.add("pet dart frog")
+println(box2) // [botox, ricin, pet dart frog]
+// This is because we did not replace the list inside it with another list;
+// we just modified the list it contains. It is still the same paper, we just
+// wrote another item on it.
+```
+
 ## Loops
 
 ### for loops
