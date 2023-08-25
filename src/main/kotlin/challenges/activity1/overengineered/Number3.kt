@@ -1,4 +1,4 @@
-package activity1.overengineered
+package challenges.activity1.overengineered
 
 val Int.divisors get() = (1..this).filter { this % it == 0 }
 

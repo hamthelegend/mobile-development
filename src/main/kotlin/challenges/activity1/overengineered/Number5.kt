@@ -1,13 +1,11 @@
-@file:Suppress("DuplicatedCode") // Ignore this. It's just for my IDE.
-
-package activity1.simplified
+package challenges.activity1.overengineered
 
 fun pascalsTriangle(rowCount: Int): List<List<Int>> {
     val triangle = mutableListOf(listOf(1))
-    for (index in 1..<rowCount) {
+    (1..<rowCount).forEach { index ->
         val previousRow = triangle[index - 1]
         val currentRow = mutableListOf<Int>()
-        for (previousRowIndex in 0..previousRow.size) {
+        (0..previousRow.size).forEach { previousRowIndex ->
             val numberToTheLeft = previousRow.getOrNull(previousRowIndex - 1) ?: 0
             val number = previousRow.getOrNull(previousRowIndex) ?: 0
             currentRow.add(numberToTheLeft + number)
@@ -19,7 +17,12 @@ fun pascalsTriangle(rowCount: Int): List<List<Int>> {
 
 fun main() {
     print("Enter the number of rows: ")
-    val rowCount = readln().toInt()
-    val triangle = pascalsTriangle(rowCount)
-    triangle.forEach { row -> println(row.joinToString("\t")) }
+    val input = readln()
+    val rowCount = input.toIntOrNull()
+    if (rowCount != null) {
+        val triangle = pascalsTriangle(rowCount)
+        triangle.forEach { row -> println(row.joinToString("\t")) }
+    } else {
+        println("$input is not a number.")
+    }
 }

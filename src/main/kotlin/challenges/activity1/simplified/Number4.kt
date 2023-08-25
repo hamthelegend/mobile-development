@@ -1,4 +1,4 @@
-package activity1.simplified
+package challenges.activity1.simplified
 
 val vowels = setOf('a', 'e', 'i', 'o', 'u')
 val consonants = ('a'..'z').filter { it !in vowels }.toSet()

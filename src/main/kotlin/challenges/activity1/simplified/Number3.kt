@@ -1,4 +1,4 @@
-package activity1.simplified
+package challenges.activity1.simplified
 
 import kotlin.math.min
 

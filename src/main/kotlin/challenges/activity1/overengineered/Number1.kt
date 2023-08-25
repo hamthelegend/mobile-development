@@ -1,4 +1,4 @@
-package activity1.overengineered
+package challenges.activity1.overengineered
 
 enum class Parity {
     Odd,

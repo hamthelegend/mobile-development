@@ -1,4 +1,4 @@
-package activity1.overengineered
+package challenges.activity1.overengineered
 
 fun Int.factorial() = (this downTo 1).reduce { product, i -> product * i }
 
