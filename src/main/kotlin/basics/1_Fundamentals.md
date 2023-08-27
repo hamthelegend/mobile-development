@@ -16,10 +16,7 @@ fun main() {
 
 ## Comments
 
-You can add comments/documentation to your code by
-writing `//` in front of it. The compiler will
-ignore everything you write after `//`. You can also
-write comments in between `/*` and `*/`.
+You can add comments/documentation to your code by writing `//` in front of it. The compiler will ignore everything you write after `//`. You can also write comments in between `/*` and `*/`.
 
 ```kotlin
 // You can write a comment here
@@ -27,7 +24,7 @@ val a = 7 // You can also write a comment here
 println("a + b" /* Even inside your code */) // This will only print "a + b"
 ```
 
-## Input/Output
+## Input/output
 
 `println` prints the arguments you provide inside it.
 
@@ -63,8 +60,7 @@ println(input)
 
 ## Variables
 
-Variables declared with the `val` keyword are immutable,
-meaning they cannot be modified once you have already set them.
+Variables declared with the `val` keyword are immutable, meaning they cannot be modified once you have already set them.
 
 ```kotlin
 val a = 1
@@ -80,8 +76,7 @@ b = 2
 println(b) // 2
 ```
 
-> **Note:** You should always declare a variable with the `val` keyword
-> unless you are sure that you have to mutate it later.
+> **Note:** You should always declare a variable with the `val` keyword unless you are sure that you have to mutate it later.
 
 ## Data types
 
@@ -98,10 +93,7 @@ Here are some of Kotlin's basic data types:
 | Char    | a single character       | `'a'`   |
 | String  | a string of characters   | `Bitch` |
 
-Kotlin automatically assigns a variable a data type
-based on the value you assigned to it. You can write
-a variable's data type explicitly, but most of the time,
-you don't need to.
+Kotlin automatically assigns a variable a data type based on the value you assigned to it. You can write a variable's data type explicitly, but most of the time, you don't need to.
 
 ```kotlin
 val a = 7 // Int
@@ -112,10 +104,7 @@ val a: Int = 7
 val b: String = "Hello"
 ```
 
-> **Note**: Kotlin has some built-in functions that
-> allow you to convert a data type to another.
-> For example, `String.toInt()` converts a `String`
-> to an `Int`.
+> **Note**: Kotlin has some built-in functions that allow you to convert a data type to another. For example, `String.toInt()` converts a `String` to an `Int`.
 > ```kotlin
 > val a = "7" // String
 > val b = a.toInt() // Int
@@ -141,9 +130,7 @@ if (a > b) {
 
 ### when
 
-`when` statements are similar to C's `switch` statements.
-They allow you to compare a value against multiple
-possible values.
+`when` statements are similar to C's `switch` statements. They allow you to compare a value against multiple possible values.
 
 ```kotlin
 val monthNumber = readln().toInt()
@@ -189,8 +176,7 @@ when {
 
 ## Relational operators
 
-Relational operators allow you to compare two values and return either
-`true` or `false` (a `Boolean`).
+Relational operators allow you to compare two values and return either `true` or `false` (a `Boolean`).
 
 | Operator | Description              |
 |----------|--------------------------|
@@ -205,8 +191,7 @@ Example: `7 < 5` returns `false`
 
 ## Conditional operators
 
-Conditional operators, also known as boolean operators,
-returns a `Boolean` based on the `Boolean` values you used it for.
+Conditional operators, also known as boolean operators, return a `Boolean` based on the `Boolean` values you used it for.
 
 | Operator | Name | Description                                                  |
 |----------|------|--------------------------------------------------------------|
@@ -223,8 +208,7 @@ returns a `Boolean` based on the `Boolean` values you used it for.
 
 ### Lists
 
-A list stores an ordered collection of values.
-You can access its elements by their indices.
+A list stores an ordered collection of values. You can access its elements by their indices.
 
 ```kotlin
 val fruits = listOf("apple", "banana", "kiwi", "apple")
@@ -237,10 +221,7 @@ println(fruits[3]) // "apple"
 
 ### Sets
 
-A set stores an unordered collection of values.
-Unlike lists, sets automatically remove duplicates,
-and they do not allow you to access its elements
-by their indices.
+A set stores an unordered collection of values. Unlike lists, sets automatically remove duplicates, and they do not allow you to access its elements by their indices.
 
 ```kotlin
 val fruits = setOf("apple", "banana", "kiwi", "apple")
@@ -250,8 +231,7 @@ println(fruits[0]) // will not compile
 
 ### Maps
 
-A map stores a collection of key-value pairs.
-You can access a map's value by its key.
+A map stores a collection of key-value pairs. You can access a map's value by its key.
 
 ```kotlin
 val fruitColors = mapOf("apple" to "red", "banana" to yellow)
@@ -259,11 +239,9 @@ println(fruitColors["apple"]) // "red"
 println(fruitColors["banana"]) // "yellow"
 ```
 
-### Mutable Collections
+### Mutable collections
 
-Lists, sets, and maps are immutable by default, meaning once you have set their values,
-they're permanent.
-To make a collection mutable, declare it with the `mutable*Of` function.
+Lists, sets, and maps are immutable by default, meaning once you have set their values, they're permanent. To make a collection mutable, declare it with the `mutable*Of` function.
 
 ```kotlin
 val fruits = mutableListOf("apple", "banana", "kiwi")
@@ -300,8 +278,7 @@ println(box2) // [botox, ricin, pet dart frog]
 
 ### for loops
 
-A for loop iterates through the elements of
-an iterable collection.
+A for loop iterates through the elements of an iterable collection.
 
 ```kotlin
 val fruits = listOf("apple", "banana", "kiwi", "apple")
@@ -318,8 +295,7 @@ for (fruit in fruits) {
 
 ### while loops
 
-A while loop runs the code block inside it repeatedly
-as long as the condition inside it is `true`.
+A while loop runs the code block inside it repeatedly as long as the condition inside it is `true`.
 
 ```kotlin
 val fruits = listOf("apple", "banana", "kiwi", "apple")
@@ -338,10 +314,10 @@ while (index < fruits.size) {
 
 ## Ranges
 
-A range is a data type that represents a range between two numbers.
-Mostly used for looping over a range of integers.
+A range is a data type that represents a range between two numbers. Mostly used for looping over a range of integers.
 
 ```kotlin
+// A range of 1 to 5
 for (number in 1..5) {
     println(number)
 }
@@ -352,13 +328,59 @@ for (number in 1..5) {
 // 3
 // 4
 // 5
+
+// A range of 5 to 1
+for (number in 5 downTo 1) {
+    println(number)
+}
+
+// Output:
+// 5
+// 4
+// 3
+// 2
+// 1
+
+// You can use the ..< operator to create a range, excluding the last number
+for (index in 0..<5) {
+    println(index)
+}
+
+// Output:
+// 0
+// 1
+// 2
+// 3
+// 4
+
+// A range that has an interval of 2
+for (index in 0..10 step 2) {
+    println(index)
+}
+
+// Output:
+// 0
+// 2
+// 4
+// 6
+// 8
+// 10
+```
+
+## String templates
+
+This allows you to substitute values into a `String`, so you don't have to do verbose concatenations.
+
+```kotlin
+val a = readln().toInt()
+println("$a is ${if (isEven(a)) "even" else "odd"}")
+// You can use $name for simple variable names
+// You can use ${expression} for anything else that's more complicated that a single variable
 ```
 
 ## Functions
 
-Kotlin allows you to separate some of the logic of your program
-into reusable functions. This will simplify your other code by
-hiding that function's complexity from the place it was called.
+Kotlin allows you to separate some of the logic of your program into reusable functions. This will simplify your other code by hiding that function's complexity from the place it was called.
 
 ```kotlin
 // Defining a function
@@ -367,11 +389,18 @@ fun printDivider() {
 }
 
 // Defining a function with parameters
+// A parameter is a value that you pass into the function from where you call it
 fun greet(name: String) {
     println("Hey, $name")
 }
 
+// A function with multiple parameters
+fun murder(murderer: String, murdered: String) {
+    println("$murderer murdered $murdered.")
+}
+
 // Defining a function with a return value
+// A return value is a value passed from the function back to where you called it
 fun isEven(x: Int): Boolean {
     return x % 2 == 0
 }
@@ -382,42 +411,26 @@ fun main() {
 
     greet("bitch")
     // Hey, bitch
+    
+    murder("Jericho", "Justine")
+    // Jericho murdered Justine
 
     println(isEven(2))
     // true
 
-    println(isEven(1))
+    val isOneEven = isEven(1)
+    println(isOneEven)
     // false
 }
 ```
 
-## String templates
-
-This allows you to substitute values into a `String`,
-so you don't have to do verbose concatenations.
-
-```kotlin
-val a = readln().toInt()
-println("$a is ${if (isEven(a)) "even" else "odd"}")
-// You can use $name for simple variable names
-// You can use ${expression} for anything else that's more complicated that a single variable
-```
-
 ## Nullability
 
-`null` is a common concept in programming. A variable set to `null`
-means it does not have any value. An integer set to null is not
-the same as it being set to 0. We can compare the difference
-between a 0 and a null to having a 0 score for a test and not
-having a score for the test at all.
+`null` is a common concept in programming. A variable set to `null`means it does not have any value. An integer set to null is not the same as it being set to 0. We can compare the difference between a 0 and a null to having a 0 score for a test and not having a score for the test at all.
 
-Unlike in languages like Java and C++, Kotlin
-does not allow you to assign `null` values to variables by default.
-This is to prevent you from trying to get a property or running
-a function to a null value, crashing your program.
+Unlike in languages like Java and C++, Kotlin does not allow you to assign `null` values to variables by default. This is to prevent you from trying to get a property or running a function to a null value, crashing your program.
 
-If you want to make a variable nullable, you must explicitly
-set its data type to be nullable with the symbol `?`.
+If you want to make a variable nullable, you must explicitly set its data type to be nullable with the symbol `?`.
 
 ```kotlin
 // This will not compile
@@ -429,9 +442,7 @@ var numberB: Int? = 7 // This is how you do nulls bb
 numberB = null
 ```
 
-Kotlin is very strict with nulls. It will not allow you to
-access properties or call functions to a nullable variable
-unless you make the call optional.
+Kotlin is very strict with nulls. It will not allow you to access properties or call functions to a nullable variable unless you make the call optional.
 
 ```kotlin
 val myInt: Int? = null
@@ -440,8 +451,7 @@ val myFloat = myInt.toFloat() // Nah, bitch. This ain't allowed.
 val myFloat = myInt?.toFloat() // Now, this is okay, but myFloat is also nullable
 ```
 
-Kotlin can automatically cast a nullable variable
-to a non-nullable variable by using a null check.
+Kotlin can automatically cast a nullable variable to a non-nullable variable by using a null check.
 
 ```kotlin
 val myInt: Int? = null
@@ -452,3 +462,6 @@ if (myInt != null) {
     // In other words, it smart-casted myInt from Int? to Int because of the null check.
 }
 ```
+
+> For more in-depth information:\
+> [Null safety | Kotlin Documentation](https://kotlinlang.org/docs/null-safety.html)
