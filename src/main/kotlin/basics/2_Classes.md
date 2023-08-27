@@ -4,6 +4,9 @@ Object-oriented programming is the concept of using objects to organize a progra
 
 # Class
 
+> For more in-depth information:\
+> [Classes | Kotlin Documentation](https://kotlinlang.org/docs/classes.html)
+
 A class is a blueprint for an object. It defines what properties and functions an object has. The contents of a class (properties, functions, etc.) are also known as class members.
 
 ```kotlin
@@ -203,6 +206,3 @@ fun main() {
     println(player.armor)
 }
 ```
-
-> For more in-depth information:\
-> [Classes | Kotlin Documentation](https://kotlinlang.org/docs/classes.html)
