@@ -54,7 +54,7 @@ fun main() {
     println(player1 == player2) // true
     
     val player3 = player2
-    // If you want to check if two variables reference the same object, use the referential equality operator ===
+    // If you want to check if two variables reference the same object, use the referential equality operator ===.
     println(player1 === player2) // false
     println(player2 === player3) // true
 }

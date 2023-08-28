@@ -12,8 +12,7 @@ A statement is a piece of code that does not return any values.
 
 ```kotlin
 // A while-loop is a statement
-while (true) { /* ... */
-}
+while (true) { /* ... */ }
 ```
 
 An expression, on the other hand, is a piece of code that does return a value. An expression can be assigned to a
@@ -51,8 +50,7 @@ You can provide arguments to your functions in any order you want as long as you
 which parameter.
 
 ```kotlin
-fun getRectangleArea(length: Double, width: Double): Double { /* ... */
-}
+fun getRectangleArea(length: Double, width: Double): Double { /* ... */ }
 
 fun main() {
     val rectangleArea = getRectangleArea(width = 2.0, length = 3.0)
