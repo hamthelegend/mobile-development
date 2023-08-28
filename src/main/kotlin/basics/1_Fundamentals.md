@@ -110,7 +110,7 @@ val b: String = "Hello"
 > val b = a.toInt() // Int
 > ```
 
-## Conditional statements
+## Control flow
 
 ### if-else
 
@@ -234,7 +234,7 @@ println(fruits[0]) // will not compile
 A map stores a collection of key-value pairs. You can access a map's value by its key.
 
 ```kotlin
-val fruitColors = mapOf("apple" to "red", "banana" to yellow)
+val fruitColors = mapOf("apple" to "red", "banana" to "yellow")
 println(fruitColors["apple"]) // "red"
 println(fruitColors["banana"]) // "yellow"
 ```
@@ -322,7 +322,6 @@ for (number in 1..5) {
     println(number)
 }
 
-// Output:
 // 1
 // 2
 // 3
@@ -334,7 +333,6 @@ for (number in 5 downTo 1) {
     println(number)
 }
 
-// Output:
 // 5
 // 4
 // 3
@@ -346,7 +344,6 @@ for (index in 0..<5) {
     println(index)
 }
 
-// Output:
 // 0
 // 1
 // 2
@@ -358,13 +355,23 @@ for (index in 0..10 step 2) {
     println(index)
 }
 
-// Output:
 // 0
 // 2
 // 4
 // 6
 // 8
 // 10
+
+// A Char range between A and E
+for (letter in 'A'..'E') {
+    println(letter)
+}
+
+// 'A'
+// 'B'
+// 'C'
+// 'D'
+// 'E'
 ```
 
 ## String templates
