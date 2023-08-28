@@ -116,6 +116,8 @@ fun main() {
     if (deviceCategory != 0) {
         println("I don't want that. I want a phone.")
     }
+    
+    // We can also use strings as return types, but things like capitalization also make things ambiguous.
 }
 ```
 
