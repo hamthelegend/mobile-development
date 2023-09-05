@@ -98,4 +98,7 @@ fun main() {
         game.switchPlayers()
         println()
     }
+    println("${game.player1.name}: ${game.player1.hp} hp")
+    println("${game.player2.name}: ${game.player2.hp} hp")
+    println("${game.winner?.name} won!")
 }
