@@ -79,6 +79,7 @@ fun main() {
     while (!game.over) {
         println("${game.player1.name}: ${game.player1.hp} hp")
         println("${game.player2.name}: ${game.player2.hp} hp")
+        println("${game.player1.name}, press [enter] to roll a die.")
         readln()
         val dieRoll = rollDie()
         println("${game.attacker.name} rolled a $dieRoll")
@@ -89,7 +90,7 @@ fun main() {
         println("1 - Tails")
         print("${game.defender.name}, what coin face are you expecting? ")
         val guessedCoinFace = if (readln().toIntOrNull() == 0) CoinFace.Heads else CoinFace.Tails
-        println("${game.defender.name} chose $guessedCoinFace")
+        println("\n${game.defender.name} chose $guessedCoinFace")
         val flippedCoinFace = flipCoin()
         println("${game.defender.name} got $flippedCoinFace")
         val damageTaken = game.defend(guessedCoinFace, flippedCoinFace)
