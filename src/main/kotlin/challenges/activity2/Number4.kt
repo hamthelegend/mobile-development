@@ -41,6 +41,7 @@ class Player(val name: String) {
         val damageMultiplier = if (guessedCoinFace == flippedCoinFace) 0.5  else 0.0
         val damageTaken = (incomingDamage * damageMultiplier).toInt()
         hp -= incomingDamage
+        incomingDamage = 0
         return damageTaken
     }
 }
@@ -64,21 +65,25 @@ class Game {
     val over get() = winner != null
 
     fun attack(dieRoll: Int) = attacker.attack(defender, dieRoll)
-    fun defend(guessedCoinFace: CoinFace, flippedCoinFace: CoinFace): Int {
-        val damageTaken = defender.takeDamage(guessedCoinFace, flippedCoinFace)
+
+    fun defend(guessedCoinFace: CoinFace, flippedCoinFace: CoinFace) =
+        defender.takeDamage(guessedCoinFace, flippedCoinFace)
+
+    fun switchPlayers() {
         attacker = defender
-        return damageTaken
     }
 }
 
 fun main() {
     val game = Game()
     while (!game.over) {
+        println("${game.player1.name}: ${game.player1.hp} hp")
+        println("${game.player2.name}: ${game.player2.hp} hp")
         readln()
         val dieRoll = rollDie()
         println("${game.attacker.name} rolled a $dieRoll")
         val incomingDamage = game.attack(dieRoll)
-        println("${game.attacker.name} is about to deal $incomingDamage hp of damage to ${game.defender.name}.")
+        println("${game.attacker.name} is about to deal $incomingDamage hp of damage to ${game.defender.name}.\n")
 
         println("0 - Heads")
         println("1 - Tails")
@@ -86,7 +91,10 @@ fun main() {
         val guessedCoinFace = if (readln().toIntOrNull() == 0) CoinFace.Heads else CoinFace.Tails
         println("${game.defender.name} chose $guessedCoinFace")
         val flippedCoinFace = flipCoin()
-        println("${game.defender.name} got a $flippedCoinFace")
-        game.defend(guessedCoinFace, flippedCoinFace)
+        println("${game.defender.name} got $flippedCoinFace")
+        val damageTaken = game.defend(guessedCoinFace, flippedCoinFace)
+        println("${game.defender.name} has taken $damageTaken hp of damage.")
+        game.switchPlayers()
+        println()
     }
 }
