@@ -38,7 +38,7 @@ class Player(val name: String) {
     }
 
     fun takeDamage(guessedCoinFace: CoinFace, flippedCoinFace: CoinFace): Int {
-        val damageMultiplier = if (guessedCoinFace == flippedCoinFace) 0.5  else 0.0
+        val damageMultiplier = if (guessedCoinFace == flippedCoinFace) 0.5  else 1.0
         val damageTaken = (incomingDamage * damageMultiplier).toInt()
         hp -= incomingDamage
         incomingDamage = 0
