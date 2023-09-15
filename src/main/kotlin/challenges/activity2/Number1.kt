@@ -6,7 +6,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 
-val formatter = DateTimeFormatter.ofPattern("MMM d, yyyy, hh:mm a")
+val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("MMM d, yyyy, hh:mm a")
     .withZone(ZoneId.systemDefault())
 
 data class Post(
